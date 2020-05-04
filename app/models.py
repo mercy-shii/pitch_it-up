@@ -14,8 +14,8 @@ class User (db.Model):
     username = db.Column(db.String(255),index = True)
     email = db.Column(db.String(255),unique = True,index = True)
     password_secure = db.Column(db.String(255))
-    pitches= db.relationship('Pitches',bacref = 'user',lazy = 'dynamic')
-    comments= db.relationship('Comments',bacref = 'user',lazy = 'dynamic')
+    pitches= db.relationship('Pitches',backref = 'user',lazy = 'dynamic')
+    comments = db.relationship('Comments',backref = 'user',lazy = 'dynamic')
     
 
 
@@ -31,7 +31,7 @@ class Pitches (db.Model):
     id = db.Column(db.Integer,primary_key = True)
     category = db.Column(db.String(255),index = True)
     pitch = db.Column(db.String(255),unique = True,index = True)
-    user_id = db.Column(db.Integer,db.ForeignKey("users.id")
+    user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
     comments = db.relationship('Comments',backref = 'pitch',lazy ='dynamic')
 
 
@@ -45,13 +45,14 @@ class Comments (db.Model):
     __tablename__ = "comments"
     id = db.Column(db.Integer,primary_key = True)
     comment = db.Column(db.String(255),index = True)
-    pitches_id = db.Column(db.Integer,db.ForeignKey("pitches.id")
-    user_id = db.Column(db.Integer,db.ForeignKey("users.id")
+    pitches_id = db.Column(db.Integer,db.ForeignKey("pitches.id"))
+    user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
+
+
+
     
 
 
 
-    def __repr__(self):
-        return f'Comments {self.comment}'
-
+    
 
