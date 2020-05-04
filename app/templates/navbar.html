@@ -23,13 +23,13 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        {% if authenticated %}
-      
+        
+        
         <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
-        {% else %}
-        <li><a href="{{url_for('auth.register')}}">Sign in</a></li>
-        {%endif%}
-      </ul>
+        
+        <li><a href="{{url_for('auth.login')}}">Sign in</a></li>
+        
+      </ul>  
    
       
   </nav>
