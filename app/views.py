@@ -6,5 +6,6 @@ def index():
     '''
     my index page
     '''
-    return render_template('index.html')
+    title = 'Pitch It UP'
+    return render_template('index.html',title = title)
      
