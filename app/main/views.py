@@ -1,6 +1,9 @@
 from flask import Flask,render_template,redirect,url_for
 from . import main
-from flask_login import login_required
+from flask_login import login_required,current_user
+from .forms import PitchForm
+from .. import db
+from ..models import Pitches,User,Comments
 
 @main.route('/')
 def index():
@@ -24,9 +27,11 @@ def new_pitch():
         # Updated pitchinstance
         new_pitch = Pitches(category= category,pitch= pitch,user=current_user)
 
+        db.session.add(new_pitch)
+        db.session.commit()
+
         title='New Pitch'
 
-        new_pitch.save_pitch()
 
         return redirect(url_for('main.index'))
 
@@ -37,10 +42,10 @@ def category(cate):
     '''
     function to return the pitches by category
     '''
-    category = Pitches.get_pitches(cate)
-    # print(category)
+    pitches = Pitches.query.filter_by(category=cate).all()
+    print(category)
     title = f'{cate}'
-    return render_template('categories.html',title = title, category = category)
+    return render_template('categories.html',title = title, pitches = pitches)
 
 @main.route('/user/<uname>')
 def profile(uname):
