@@ -19,10 +19,10 @@ def new_pitch():
     if form.validate_on_submit():
         category = form.category.data
         pitch= form.pitch.data
-        title=form.title.data
+        
 
         # Updated pitchinstance
-        new_pitch = Pitches(title=title,category= category,pitch= pitch,user_id=current_user.id)
+        new_pitch = Pitches(category= category,pitch= pitch,user=current_user)
 
         title='New Pitch'
 
