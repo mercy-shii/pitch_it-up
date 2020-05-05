@@ -60,7 +60,7 @@
         </div>
       </div>
 
-      <div class="card border-info mb-5" style="width: 70rem;height: 20rem;">
+      <div class="card border-info mb-5" style="width: 70rem;height: 20rem; background-color: transparent;">
         <div class="card-header">Happiness</div>
         <div class="card-body text-info">
           <br>
@@ -71,10 +71,18 @@
           <button type="button" class="btn btn-outline-success"><a href="/categories/Happiness">Read Pitches</a></button>
         </div>
       </div>
-
     </div>
   </div>
 </div>
+<style>
+  .card-text{
+    color: darkkhaki;
+  }
+  .container{
+    background-image: url({{url_for('static',filename='images/images.jpeg')}})
+  }
+  
+</style>
 
   {% endblock%}
 </body>
