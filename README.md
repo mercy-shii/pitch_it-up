@@ -1,22 +1,19 @@
- { PITCHES }
+ ###PITCHES 
  
-{An application that gives opportunity to render differemt types of pitches.}, {2020}
+An application that gives opportunity to render differemt types of pitches., {2020}
 
- Description
+ ###Description
  
 The application gives you only your 60 seconds use to render pitches in different categories that you wish.
 
-Setup/Installation Requirements
-
-Clone This Repository and navigate into the directory by the name flask-boiler-plate Inside your terminal
+###Setup/Installation Requirements
 
 Set your virtual environment eg $pip python3 -m venv virtual dont forget to activate it before the next step. You can do this by $source activate virtual/bin/activate
 
 Install the flask extension eg $pip install flask
 
-Install the flask_script extension eg $pip install flask_script
-
 Finally run your application on the terminal using the command $python3.6 manage.py server
+
 ## Known Bugs
 
 No known bugs yet but if any you can reach out wmercy525@gmail.com
