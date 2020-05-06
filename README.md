@@ -1,12 +1,12 @@
- ###PITCHES 
+ PITCHES 
  
 An application that gives opportunity to render differemt types of pitches., {2020}
 
- ###Description
+ Description
  
 The application gives you only your 60 seconds use to render pitches in different categories that you wish.
 
-###Setup/Installation Requirements
+Setup/Installation Requirements
 
 Set your virtual environment eg $pip python3 -m venv virtual dont forget to activate it before the next step. You can do this by $source activate virtual/bin/activate
 
